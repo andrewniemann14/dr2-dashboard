@@ -9,9 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "net": "^1.0.2",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "serverless-mysql": "^1.5.4",
+    "tls": "^0.0.1"
   },
   "devDependencies": {
     "eslint": "8.11.0",
