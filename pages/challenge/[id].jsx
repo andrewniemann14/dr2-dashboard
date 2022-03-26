@@ -1,1 +1,0 @@
-// simple printout of results for any given challenge_id

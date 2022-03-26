@@ -1,15 +1,20 @@
-// https://www.youtube.com/watch?v=eWObYvG0-lI&ab_channel=AdoKukic
-// https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration
-
 // npm run dev  => localhost:3000
 
 
-import { resolveHref } from 'next/dist/shared/lib/router/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
+// this should really redirect to profile/[dynamic] if there's a username in the cookie jar
+// or at least make a possible redirect predominant on this page
 
+// TODO:
+// challenge/[id].jsx
+// just a DataGrid of the challenge
+
+// TODO:
+// challenge/current.jsx
+// show best times per vehicle for current challenge's stage+class
 
 
 export default function Home() {
@@ -30,7 +35,6 @@ export default function Home() {
         <table>
           <thead> {/* change this to a component that takes in number of props as header titles */}
             <tr>
-              <th>Place</th>
               <th>Name</th>
               <th>Nationality</th>
               <th>Score</th>
@@ -41,13 +45,6 @@ export default function Home() {
           </tbody>
         </table>
 
-        <button onClick={()=> {
-          fetch('./api/challenges')
-          .then((data) => {
-            console.log(data);
-          })
-        
-        }}>click</button>
 
 
 
@@ -69,17 +66,3 @@ export default function Home() {
     </div>
   )
 }
-
-/*
-export async function getServerSideProps() {
-
-  // put code for accessing the DB and getting the raw data here
-  // or a reference to a separate backend code?
-
-  return {
-    props: {
-      // raw data in object format, as a simple variable(s)
-    }
-  }
-}
-*/
