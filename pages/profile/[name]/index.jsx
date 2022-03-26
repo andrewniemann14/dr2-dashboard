@@ -225,14 +225,14 @@ export async function getServerSideProps(context) {
   const mysql = require('mysql2/promise');
   // use connection pool instead to make it faster, make previous connection reusable
   const conn = await mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USERNAME,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASSWORD
-    // host: 'localhost',
-    // user: 'root',
-    // database: 'dr2',
-    // password: 'password'
+    // host: process.env.DB_HOST,
+    // user: process.env.DB_USERNAME,
+    // database: process.env.DB_DATABASE,
+    // password: process.env.DB_PASSWORD
+    host: 'niemann.app',
+    user: 'niemann8_dr2_usr',
+    database: 'niemann8_dr2',
+    password: '7-!^hz927k;p'
   });
   const [entries, entryFields] = JSON.parse(JSON.stringify(await conn.execute("SELECT * FROM leaderboard INNER JOIN challenges ON leaderboard.challenge_id = challenges.id WHERE name=?", [context.query.name])))
   const [classes, classFields] = JSON.parse(JSON.stringify(await conn.execute("SELECT DISTINCT vehicle_class FROM leaderboard INNER JOIN challenges ON leaderboard.challenge_id = challenges.id WHERE name=?", [context.query.name])))
