@@ -229,7 +229,7 @@ export async function getServerSideProps(context) {
     // user: process.env.DB_USERNAME,
     // database: process.env.DB_DATABASE,
     // password: process.env.DB_PASSWORD
-    host: 'https://niemann.app/',
+    host: 'niemann.app',
     user: 'niemann8_dr2_usr',
     database: 'niemann8_dr2',
     password: '7-!^hz927k;p'
