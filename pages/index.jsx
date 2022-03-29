@@ -2,7 +2,7 @@
 
 
 import Head from 'next/head';
-import Image from 'next/image';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
 // this should really redirect to profile/[dynamic] if there's a username in the cookie jar
@@ -16,6 +16,8 @@ import styles from '../styles/Home.module.css';
 // challenge/current.jsx
 // show best times per vehicle for current challenge's stage+class
 
+// https://stackoverflow.com/questions/61927604/pass-custom-prop-or-data-to-next-js-link-component
+
 
 export default function Home() {
   return (
@@ -26,43 +28,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <Link href={"/profile/8ourne"} >My page</Link>
+      <br />
+      <Link href={"/current"}>Today`s challenges</Link>
 
-        {/* highest average scorers */}
-        <table>
-          <thead> {/* change this to a component that takes in number of props as header titles */}
-            <tr>
-              <th>Name</th>
-              <th>Nationality</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-
-          </tbody>
-        </table>
-
-
-
-
-
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
+
